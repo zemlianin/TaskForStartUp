@@ -12,6 +12,8 @@ namespace ClassLibraryPart_1
     {
 
         private List<Node> nodes = new List<Node>();
+
+        delegate  void Load();
         public void Add(Node node)
         {  
             nodes.Add(node);
@@ -20,8 +22,8 @@ namespace ClassLibraryPart_1
         {
             for(int i = 0; i < nodes.Count;i++)
             {
-               // Console.WriteLine( nodes[i].Name);
-                File.WriteAllText($"nodes\\{nodes[i].Name}.node", $"text{i}");
+                Console.WriteLine( nodes[i].Name);
+                File.WriteAllText($"..\\..\\..\\..\\ClassLibraryPart_1\\nodes\\{nodes[i].Name}.node", $"text{i}");
             }
           
         }

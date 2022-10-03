@@ -12,11 +12,10 @@ namespace SourceGenerator
         {
 
             var files = System.IO.Directory.GetFiles("nodes");
-         
+
 
             for (int i = 0; i < files.Length; i++)
             {
-                var path = files[i].Replace("\\", "\\");
                 var name = files[i].Replace('\\', '-');
                 name = name.Substring(6);
                 name = name.Remove(name.IndexOf('.'));
@@ -31,13 +30,10 @@ namespace  ClassLibraryPart_1
     {{
         static partial void Load{i}(Vault v) 
         {{
-            
-            Console.WriteLine($""Geytor sa: 32sdad '''"");
-            var text = System.IO.File.ReadAllText(""{path}"");
             //var files = System.IO.Directory.GetFiles(""nodes"");
            // System.Console.WriteLine(files.Length);
-            v.nodes.Add(new Node(""{name}"",text));
-            //Console.WriteLine($""Geytor sa: 32sdad '''"");
+            v.nodes.Add(new Node(""{name}"",""{System.IO.File.ReadAllText(files[i])}""));
+          //  Console.WriteLine($""Geytrtor says: frgngff3 '''"");
         }}
     }}
 }}
