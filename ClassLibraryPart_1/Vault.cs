@@ -22,7 +22,7 @@ namespace ClassLibraryPart_1
         {
             for(int i = 0; i < nodes.Count;i++)
             {
-                Console.WriteLine( nodes[i].Name);
+               
                 File.WriteAllText($"..\\..\\..\\..\\ClassLibraryPart_1\\nodes\\{nodes[i].Name}.node", $"text{i}");
             }
           
@@ -42,9 +42,6 @@ namespace ClassLibraryPart_1
         static partial void Load0(Vault v);
         static partial void Load1(Vault v);
         static partial void Load2(Vault v);
-
-        //   delegate void Loading();
-        //  static partial void LoadAll(string name);
 
         public Node? this[string otherNodeName]
         {
