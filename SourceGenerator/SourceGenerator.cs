@@ -10,7 +10,7 @@ namespace SourceGenerator
 
         public void Execute(GeneratorExecutionContext context)
         {
-            System.IO.File.WriteAllText("ttt", "");
+            
             var files = System.IO.Directory.GetFiles($"nodes");
 
 
@@ -33,7 +33,6 @@ namespace  ClassLibraryPart_2
             string data = File.ReadAllText(""..\\..\\..\\..\\ClassLibraryPart_2\\{path}"");
             var node = JsonSerializer.Deserialize<Node<T>>(data);
             v.nodes.Add(node);
-          //  Console.WriteLine($""Geyfkldlljd-jkkd 123"");
         }}
     }}
 }}
