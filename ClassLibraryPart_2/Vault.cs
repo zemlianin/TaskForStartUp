@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
 
 namespace ClassLibraryPart_2
 {
@@ -21,7 +23,8 @@ namespace ClassLibraryPart_2
         {
             for (int i = 0; i < nodes.Count; i++)
             {
-                using (FileStream stream = new FileStream($"nodes\\{nodes[i].Name}.json", 
+              
+                using (FileStream stream = new FileStream($"..\\..\\..\\..\\ClassLibraryPart_2\\nodes\\{nodes[i].Name}.json", 
                     FileMode.OpenOrCreate))
                 {
                     JsonSerializer.Serialize(stream, nodes[i]);

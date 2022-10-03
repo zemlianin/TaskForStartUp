@@ -11,15 +11,15 @@ namespace TaskForSturtUp
         static void Main(string[] args)
         {
             var v = new Vault<int>();
-            /*v.Add(new Node<int>("node1", "text1", 11));
-            v.Add(new Node<int>("node2", "text2", 22));
-            v.Add(new Node<int>("node3", "text3", 33));*/
+           /* v.Add(new Node<int>("node1", "text1", 115));
+            v.Add(new Node<int>("node2", "text2", 225));
+            v.Add(new Node<int>("node3", "text3", 335));*/
 
             //v.Add(new Node()  { Name = file, Text = System.IO.File.ReadAllText("nodes/file") } );
-            // v.Save();
+           //  v.Save();
             v.Download0();
-             v.Download1();
-           
+            v.Download1();
+
             foreach (var item in v)
             {
                 Console.WriteLine(item.Text+"_"+item.Obj);
