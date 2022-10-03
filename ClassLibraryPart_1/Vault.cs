@@ -23,7 +23,7 @@ namespace ClassLibraryPart_1
             for(int i = 0; i < nodes.Count;i++)
             {
                 Console.WriteLine( nodes[i].Name);
-                File.WriteAllText($"..\\..\\..\\..\\ClassLibraryPart_1\\nodes\\{nodes[i].Name}.node", $"text{i}");
+                File.WriteAllText($"nodes\\{nodes[i].Name}.node", $"text{i}");
             }
           
         }

@@ -8,9 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibraryPart_1\ClassLibraryPart_1.csproj" />
-	  <ProjectReference Include="..\SourceGenerator\SourceGenerator.csproj"
-						 />
+    <ProjectReference Include="..\ClassLibraryPart_2\ClassLibraryPart_2.csproj" />
+	  <ProjectReference Include="..\SourceGenerator\SourceGenerator.csproj" />
   </ItemGroup>
 
   
