@@ -29,7 +29,7 @@ namespace  ClassLibraryPart_2
         {{
             string data = File.ReadAllText(""..\\..\\..\\..\\ClassLibraryPart_2\\{path}"");
             var node = JsonSerializer.Deserialize<Node<T>>(data);
-            v.nodes.Add(node);
+            v.Add(node);
         }}
     }}
 }}
