@@ -11,12 +11,15 @@ namespace ClassLibraryPart_2
 {
     public partial class Vault<T>
     {
-        //Именя должны быть уникальны
+        //Имена должны быть уникальны, требуется для скорости
         private Dictionary<string,Node<T>> nodes = new Dictionary<string, Node<T>>();
         public void Add(Node<T> node)
         {
             nodes.Add(node.Name,node);
         }
+        /// <summary>
+        /// Сохранение
+        /// </summary>
         public void Save()
         {
             foreach (var it in nodes)
@@ -87,7 +90,11 @@ namespace ClassLibraryPart_2
         static partial void Load7(Vault<T> v);
         static partial void Load8(Vault<T> v);
         static partial void Load9(Vault<T> v);
-
+        /// <summary>
+        /// Поиск по имени
+        /// </summary>
+        /// <param name="otherNodeName">Имя</param>
+        /// <returns></returns>
         public Node<T>? this[string otherNodeName]
         {
             get
@@ -95,7 +102,10 @@ namespace ClassLibraryPart_2
                 return nodes[otherNodeName];
             }
         }
-
+        /// <summary>
+        /// Итерирование
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<Node<T>> GetEnumerator()
         {
             foreach (var it in nodes)
