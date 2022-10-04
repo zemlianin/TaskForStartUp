@@ -10,25 +10,13 @@ namespace TaskForSturtUp
     {
         static void Main(string[] args)
         {
-            var v = new Vault<int>();
-           /* v.Add(new Node<int>("node1", "text1", 115));
-            v.Add(new Node<int>("node2", "text2", 225));
-            v.Add(new Node<int>("node3", "text3", 335));*/
-
-            //v.Add(new Node()  { Name = file, Text = System.IO.File.ReadAllText("nodes/file") } );
-           //  v.Save();
-            v.Download(0);
-            v.Download(1);
-
-            foreach (var item in v)
-            {
-                Console.WriteLine(item.Text+"_"+item.Obj);
-            }
-            v.Save();
-            //v.Download2();
-            //  HelloFrom("Generated Code");
+            var testing = new Testing();
+            Console.WriteLine("---TestAdd---");
+            testing.TestAdd();
+            Console.WriteLine("---TestDownload---");
+            testing.TestDownload();
+            Console.WriteLine("---TestFind---");
+            testing.TestFind();            
         }
-       // static partial void HelloFrom(string name);
-
     }
 }
