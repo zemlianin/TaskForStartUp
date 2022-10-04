@@ -31,7 +31,7 @@ namespace  ClassLibraryPart_1
         static partial void Load{i}(Vault v) 
         {{
             string data = File.ReadAllText(""..\\..\\..\\..\\ClassLibraryPart_1\\{path}"");
-            v.nodes.Add(new Node(""{name}"",data));
+            v.Add(new Node(""{name}"",data));
         }}
     }}
 }}
