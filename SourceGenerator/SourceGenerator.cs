@@ -11,12 +11,10 @@ namespace SourceGenerator
 
         public void Execute(GeneratorExecutionContext context)
         {
-           
             var files = Directory.GetFiles("nodes");
-
-
             for (int i = 0; i < files.Length; i++)
             {
+                //Получение ссылок и имени
                 var path = files[i].Replace("\\", "\\\\");
                 var name = files[i].Replace('\\', '-');
                 name = name.Substring(6);
