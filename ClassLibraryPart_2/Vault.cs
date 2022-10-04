@@ -14,14 +14,20 @@ namespace ClassLibraryPart_2
 
         private List<Node<T>> nodes = new List<Node<T>>();
 
-        delegate void Load();
+        /// <summary>
+        /// Добавление ноды
+        /// </summary>
+        /// <param name="node"></param>
         public void Add(Node<T> node)
         {
             nodes.Add(node);
         }
+        /// <summary>
+        /// Сохранение первых 10
+        /// </summary>
         public void Save()
         {
-            for (int i = 0; i < nodes.Count; i++)
+            for (int i = 0; i < Math.Min(nodes.Count,10); i++)
             {
               
                 using (FileStream stream = new FileStream($"..\\..\\..\\..\\ClassLibraryPart_2\\nodes\\{nodes[i].Name}.json", 
@@ -33,22 +39,67 @@ namespace ClassLibraryPart_2
 
 
         }
-        public void Download0()
+        /// <summary>
+        /// Выполнение метода подгрузки
+        /// </summary>
+        /// <param name="number">Номер метода</param>
+        /// <exception cref="ArgumentOutOfRangeException">Если номер не лежит в промежутке от 0 до 10</exception>
+        public void Download(int number)
         {
-            Load0(this);
+            switch (number)
+            {
+                case 0:
+                    Load0(this);
+                    break;
+                case 1:
+                    Load1(this);
+                    break;
+                case 2:
+                    Load2(this);
+                    break;
+                case 3:
+                    Load3(this);
+                    break;
+                case 4:
+                    Load4(this);
+                    break;
+                case 5:
+                    Load5(this);
+                    break;
+                case 6:
+                    Load6(this);
+                    break;
+                case 7:
+                    Load7(this);
+                    break;
+                case 8:
+                    Load8(this);
+                    break;
+                case 9:
+                    Load9(this);
+                    break;
+                default: throw new ArgumentOutOfRangeException(nameof(number));
+            }
         }
-        public void Download1()
-        {
-            Load1(this);
-        }
-        public void Download2()
-        {
-            Load2(this);
-        }
+       /// <summary>
+       /// Методы подгрузки
+       /// </summary>
+       /// <param name="v">Объект в который происходит подгрузка</param>
         static partial void Load0(Vault<T> v);
         static partial void Load1(Vault<T> v);
         static partial void Load2(Vault<T> v);
-
+        static partial void Load3(Vault<T> v);
+        static partial void Load4(Vault<T> v);
+        static partial void Load5(Vault<T> v);
+        static partial void Load6(Vault<T> v);
+        static partial void Load7(Vault<T> v);
+        static partial void Load8(Vault<T> v);
+        static partial void Load9(Vault<T> v);
+        /// <summary>
+        /// Поиск по имени
+        /// </summary>
+        /// <param name="otherNodeName">Имя</param>
+        /// <returns></returns>
         public Node<T>? this[string otherNodeName]
         {
             get
@@ -56,7 +107,10 @@ namespace ClassLibraryPart_2
                 return nodes.Find((Node<T> a) => a.Name == otherNodeName);
             }
         }
-
+        /// <summary>
+        /// Итерация
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator<Node<T>> GetEnumerator()
         {
             for (int i = 0; i < nodes.Count; i++)

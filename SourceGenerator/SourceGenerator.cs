@@ -10,10 +10,7 @@ namespace SourceGenerator
 
         public void Execute(GeneratorExecutionContext context)
         {
-            
             var files = System.IO.Directory.GetFiles($"nodes");
-
-
             for (int i = 0; i < files.Length; i++)
             {
                 var path = files[i].Replace("\\","\\\\");
