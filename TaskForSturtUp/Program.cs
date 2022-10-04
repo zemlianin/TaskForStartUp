@@ -17,8 +17,8 @@ namespace TaskForSturtUp
 
             //v.Add(new Node()  { Name = file, Text = System.IO.File.ReadAllText("nodes/file") } );
            //  v.Save();
-            v.Download0();
-            v.Download1();
+            v.Download(0);
+            v.Download(1);
 
             foreach (var item in v)
             {

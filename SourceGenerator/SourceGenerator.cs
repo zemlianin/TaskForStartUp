@@ -30,9 +30,10 @@ namespace  ClassLibraryPart_2
     {{
         static partial void Load{i}(Vault<T> v) 
         {{
+
             string data = File.ReadAllText(""..\\..\\..\\..\\ClassLibraryPart_2\\{path}"");
             var node = JsonSerializer.Deserialize<Node<T>>(data);
-            v.nodes.Add(node);
+             v.Add(node);
         }}
     }}
 }}
