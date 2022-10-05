@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using System.Xml.Linq;
 using ClassLibraryPart_2;
 
@@ -10,6 +11,7 @@ namespace TaskForSturtUp
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(JsonSerializer.Serialize(new Node<int>()));
             var testing = new Testing();
             Console.WriteLine("---TestAdd---");
             testing.TestAdd();
