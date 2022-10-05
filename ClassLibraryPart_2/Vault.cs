@@ -20,20 +20,19 @@ namespace ClassLibraryPart_2
         /// <summary>
         /// Сохранение
         /// </summary>
+        /// <summary>
+        /// Сохранение первых 10
+        /// </summary>
         public void Save()
         {
-            foreach (var it in nodes)
+            foreach (Node<T> node in nodes.Values)
             {
-              
-                using (FileStream stream = new FileStream($"..\\..\\..\\..\\ClassLibraryPart_2\\nodes\\{it.Value.Name}.json", 
-                    FileMode.OpenOrCreate))
-                {
-                    JsonSerializer.Serialize(stream, it.Value);
-                }
+                node.NodeToFile($"..\\..\\..\\..\\ClassLibraryPart_2\\nodes");
             }
 
 
         }
+
         /// <summary>
         /// Выполнение метода подгрузки
         /// </summary>
@@ -41,55 +40,18 @@ namespace ClassLibraryPart_2
         /// <exception cref="ArgumentOutOfRangeException">Если номер не лежит в промежутке от 0 до 10</exception>
         public void Download(int number)
         {
-            switch (number)
+            if (number > 0)
             {
-                case 0:
-                    Load0(this);
-                    break;
-                case 1:
-                    Load1(this);
-                    break;
-                case 2:
-                    Load2(this);
-                    break;
-                case 3:
-                    Load3(this);
-                    break;
-                case 4:
-                    Load4(this);
-                    break;
-                case 5:
-                    Load5(this);
-                    break;
-                case 6:
-                    Load6(this);
-                    break;
-                case 7:
-                    Load7(this);
-                    break;
-                case 8:
-                    Load8(this);
-                    break;
-                case 9:
-                    Load9(this);
-                    break;
-                default: throw new ArgumentOutOfRangeException(nameof(number));
+                AutoDownload(number, this);
             }
         }
         /// <summary>
-        /// Методы подгрузки
+        /// Выполнение метода подгрузки
         /// </summary>
-        /// <param name="v">Объект в который происходит подгрузка</param>
-        static partial void Load0(Vault<T> v);
-        static partial void Load1(Vault<T> v);
-        static partial void Load2(Vault<T> v);
-        static partial void Load3(Vault<T> v);
-        static partial void Load4(Vault<T> v);
-        static partial void Load5(Vault<T> v);
-        static partial void Load6(Vault<T> v);
-        static partial void Load7(Vault<T> v);
-        static partial void Load8(Vault<T> v);
-        static partial void Load9(Vault<T> v);
+        /// <param name="number">Номер метода</param>
+        /// <exception cref="ArgumentOutOfRangeException">Если номер не лежит в промежутке от 0 до 10</exception>
+        static partial void AutoDownload(int number, Vault<T> v);
+       
         /// <summary>
         /// Поиск по имени
         /// </summary>

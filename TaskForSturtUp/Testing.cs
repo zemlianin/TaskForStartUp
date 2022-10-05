@@ -48,8 +48,7 @@ namespace TaskForSturtUp
             v2.Download(4);
             v2.Download(5);
             v2.Download(8);
-            //Подгрузка неопределенного метода, как видно, ошибок нет
-            v2.Download(9);
+
             foreach (var item in v2)
             { 
                 Console.WriteLine(item.Text + "_" + item.Obj);
