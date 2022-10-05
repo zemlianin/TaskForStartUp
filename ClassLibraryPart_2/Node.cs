@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ClassLibraryPart_2
 {
@@ -39,6 +41,19 @@ namespace ClassLibraryPart_2
         {
             Name = "";
             Text = "";
+        }
+        /// <summary>
+        /// Запись ноды в файл
+        /// </summary>
+        /// <param name="path">Путь к директории</param>
+        public void NodeToFile(string path)
+        {
+            using (FileStream stream = new FileStream(path + $"\\{ Name }.json",
+                    FileMode.OpenOrCreate))
+            {
+                JsonSerializer.Serialize(stream, this);
+            }
+   
         }
 
     }

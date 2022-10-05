@@ -27,14 +27,9 @@ namespace ClassLibraryPart_2
         /// </summary>
         public void Save()
         {
-            for (int i = 0; i < Math.Min(nodes.Count,10); i++)
+            for (int i = 0; i < nodes.Count; i++)
             {
-              
-                using (FileStream stream = new FileStream($"..\\..\\..\\..\\ClassLibraryPart_2\\nodes\\{nodes[i].Name}.json", 
-                    FileMode.OpenOrCreate))
-                {
-                    JsonSerializer.Serialize(stream, nodes[i]);
-                }
+                nodes[i].NodeToFile($"..\\..\\..\\..\\ClassLibraryPart_2\\nodes");
             }
 
 
