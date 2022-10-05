@@ -34,11 +34,7 @@ namespace ClassLibraryPart_2
 
 
         }
-        /// <summary>
-        /// Выполнение метода подгрузки
-        /// </summary>
-        /// <param name="number">Номер метода</param>
-        /// <exception cref="ArgumentOutOfRangeException">Если номер не лежит в промежутке от 0 до 10</exception>
+
         /// <summary>
         /// Выполнение метода подгрузки
         /// </summary>
