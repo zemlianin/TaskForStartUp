@@ -37,19 +37,23 @@ namespace ClassLibraryPart_2
         /// Выполнение метода подгрузки
         /// </summary>
         /// <param name="number">Номер метода</param>
-        /// <exception cref="ArgumentOutOfRangeException">Если номер не лежит в промежутке от 0 до 10</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Если номер меньше 0</exception>
         public void Download(int number)
         {
             if (number > 0)
             {
                 AutoDownload(number, this);
             }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
         }
         /// <summary>
-        /// Выполнение метода подгрузки
+        /// Автогенерируемый метод, объявление
         /// </summary>
-        /// <param name="number">Номер метода</param>
-        /// <exception cref="ArgumentOutOfRangeException">Если номер не лежит в промежутке от 0 до 10</exception>
+        /// <param name="number">номер</param>
+        /// <param name="v">объект сохранения</param>
         static partial void AutoDownload(int number, Vault<T> v);
        
         /// <summary>
