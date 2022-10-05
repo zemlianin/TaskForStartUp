@@ -23,7 +23,7 @@ namespace ClassLibraryPart_2
             nodes.Add(node);
         }
         /// <summary>
-        /// Сохранение первых 10
+        /// Сохранение
         /// </summary>
         public void Save()
         {
@@ -48,10 +48,10 @@ namespace ClassLibraryPart_2
             }
         }
         /// <summary>
-        /// Выполнение метода подгрузки
+        /// Объявление автореализации
         /// </summary>
-        /// <param name="number">Номер метода</param>
-        /// <exception cref="ArgumentOutOfRangeException">Если номер не лежит в промежутке от 0 до 10</exception>
+        /// <param name="number">номер файла</param>
+        /// <param name="v">объект куда грузить</param>
         static partial void AutoDownload(int number, Vault<T> v);
         /// <summary>
         /// Поиск по имени
