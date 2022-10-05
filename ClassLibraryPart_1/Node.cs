@@ -42,7 +42,7 @@ namespace ClassLibraryPart_1
         /// <param name="path">Путь к директории</param>
         public void NodeToFile(string path)
         {
-            File.WriteAllText(path+$"\\Name.node", "text");
+            File.WriteAllText(path+$"\\{Name}.node", $"{Text}");
         }
        
     }
