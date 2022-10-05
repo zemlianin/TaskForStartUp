@@ -22,7 +22,7 @@ using System.Text.Json;
 
 namespace  ClassLibraryPart_2
 {{
-    
+    /////
     public partial class Vault<T>
     {{
         static partial void Load{i}(Vault<T> v) 
@@ -30,6 +30,7 @@ namespace  ClassLibraryPart_2
             string data = File.ReadAllText(""..\\..\\..\\..\\ClassLibraryPart_2\\{path}"");
             var node = JsonSerializer.Deserialize<Node<T>>(data);
             v.Add(node);
+//
         }}
     }}
 }}
