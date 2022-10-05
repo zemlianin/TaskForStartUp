@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
+
 namespace ClassLibraryPart_1
 {
     public partial class Vault
@@ -27,10 +28,9 @@ namespace ClassLibraryPart_1
         /// </summary>
         public void Save()
         {
-            //Сохраняются только первые 10 записей, в дальнейшем число можно изменить.
-            for(int i = 0; i < Math.Min(nodes.Count,10);i++)
+            for(int i = 0; i < nodes.Count;i++)
             {
-                File.WriteAllText($"..\\..\\..\\..\\ClassLibraryPart_1\\nodes\\{nodes[i].Name}.node", $"text{i}");
+                nodes[i].NodeToFile($"..\\..\\..\\..\\ClassLibraryPart_1\\nodes");
             }
           
         }
